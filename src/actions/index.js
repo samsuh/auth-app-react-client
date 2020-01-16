@@ -45,8 +45,13 @@ export const signup = (formProps, callback) => async dispatch => {
     try {const response = await axios.post('http://localhost:3090/signup', formProps)
 
     //call dispatch, passing it action{type:AUTH_USER, payload:"response containing JWT on the 'token' property"} and reducers.
-    //once this happens, watch for a type: AUTH_USER from somewhere in 'reducers'
+    //once this happens, watch for a type: AUTH_USER from somewhere in 'reducers' that will use the payload containing JWT
     dispatch({type: AUTH_USER, payload: response.data.token})
+
+    //set user's JWT into localStorage to persist login. 
+    //can use src/index.js initial state inside createStore to get starting state into redux store. 
+    //pass it 'auth: {authenticated: localStorage.getItem('token')} as initial state if there's a JWT in localStorage.
+    localStorage.setItem('token', response.data.token)
     callback()
 } catch (e){
     //dispatch an action of AUTH_ERROR with error payload. 

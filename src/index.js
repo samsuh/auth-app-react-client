@@ -14,8 +14,11 @@ import Dashboard from './components/Dashboard'
 //import redux-thunk and tie it to the createStore call. expanded from just "createStore(reducers, {})"
 const store = createStore(
     reducers, 
-    //initial state
-    {},
+    //initial state {}, but changed to set 'authenticated' to the JWT in localStorage if user already signed in
+    //when application starts up, check to see if we have a stored token, if we do, start redux state with JWT stored to auth.authenticated property 
+    {
+        authenticated: localStorage.getItem('token')
+    },
     applyMiddleware(reduxThunk)
 )
 
