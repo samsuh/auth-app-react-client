@@ -9,6 +9,7 @@ import reducers from './reducers'
 import App from './components/App'
 import Landing from './components/Landing'
 import Signup from './components/auth/Signup'
+import Dashboard from './components/Dashboard'
 
 //import redux-thunk and tie it to the createStore call. expanded from just "createStore(reducers, {})"
 const store = createStore(
@@ -25,7 +26,8 @@ ReactDOM.render(
         <BrowserRouter>
             <App>
                 <Route path="/" exact component={Landing} />
-                <Route path="/signup" exact component={Signup} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/dashboard" component={Dashboard} />
             </App>
         </BrowserRouter>
     </Provider>
