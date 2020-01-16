@@ -8,7 +8,7 @@ class Header extends Component {
     //check if user is signedin. show Signed-In-User-Links that are relevant
     if (this.props.authenticated) {
       return (
-        <ul>
+        <ul className='right'>
           <li>
             <Link to='/signout'>Sign Out</Link>
           </li>
