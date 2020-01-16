@@ -12,7 +12,13 @@ class Signup extends Component {
 onSubmit = (formProps) => {
     // console.log(formProps)
     //call the signup action creator from ../../actions/index.js that's available inside our component. 
-    this.props.signup(formProps)
+    // this.props.signup(formProps)
+    
+    //as a second argument to the signup action creator, pass callback after user successfully signs up that redirects to protected Dashboard route
+    //utilize 'history' prop from 'react-router'
+    this.props.signup(formProps, () => {
+        this.props.history.push('/dashboard')
+    })
 }
 
 render(){
@@ -54,6 +60,9 @@ render(){
                         component="input"
                     />
                 </fieldset>
+                <div>
+                    {this.props.errorMessage}
+                </div>
                 <button>Sign Up!</button>
             </form>
         )
@@ -66,8 +75,16 @@ render(){
 //we need to wire up reduxForm along with the connect() helper. will look messy, so we use 'compose' helper function from redux to make these HOCs more readable. 
 //without compose, need to add connect(). export default reduxForm({ form: 'signup' })(Signup)
 
+//pull errorMessage piece of state into this component to display error to user. receives state object returns errorMessage from state.auth.errorMessage
+//'auth' here is the auth reducer
+function mapStateToProps(state){
+    return {errorMessage: state.auth.errorMessage}
+}
+
 export default compose(
     //apply action creators to Singup component. null because there are no pieces of state we want to pass in, and pass in the actions object
-    connect(null, actions),
+    // connect(null, actions),
+    //changed null to mapStateToProps because we now might have an errorMessage to display to users upon 'signup'
+    connect(mapStateToProps, actions),
     reduxForm({ form: 'signup' })
 )(Signup)

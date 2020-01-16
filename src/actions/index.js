@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { AUTH_USER } from './types'
+import { AUTH_USER, AUTH_ERROR } from './types'
 
 //signup called with received email/password from our form.
 //signup is a typical action creator. we call it, and inside it, it's our duty to return an action with type/optional-payload {type:auth_user, payload: 'something'}
@@ -31,6 +31,28 @@ import { AUTH_USER } from './types'
 //all logic around action creator: making request, try to sign up w email/pw, eventually call disaptch with our action happens here
 
 //we will import axios, take email/pw and try to POST to backend API
-export const signup = (formProps) => dispatch => {
-    axios.post('http://localhost:3090/signup', formProps)
+// export const signup = (formProps) => dispatch => {
+//     axios.post('http://localhost:3090/signup', formProps)
+// }
+
+//mark async/await, and store in a const called "response"
+//"response" contains the JWT received from a successful signup
+// export const signup = (formProps) => async dispatch => {
+
+//record that we are getting a second prop named 'callback'. inside 'try', after we get back 'response', after we dispatch an action saying user signed in, call callback.
+export const signup = (formProps, callback) => async dispatch => {
+    //try block catches errors from signup process so we can use it to display to users on the front-end form
+    try {const response = await axios.post('http://localhost:3090/signup', formProps)
+
+    //call dispatch, passing it action{type:AUTH_USER, payload:"response containing JWT on the 'token' property"} and reducers.
+    //once this happens, watch for a type: AUTH_USER from somewhere in 'reducers'
+    dispatch({type: AUTH_USER, payload: response.data.token})
+    callback()
+} catch (e){
+    //dispatch an action of AUTH_ERROR with error payload. 
+    dispatch({type: AUTH_ERROR, payload: 'Email in use'})
+}
+
+    //once user successfully signs up, we have to redirect them to the Dashboard page of our application. 
+
 }
