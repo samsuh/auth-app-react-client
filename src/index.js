@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import "materialize-css/dist/css/materialize.min.css";
->>>>>>> styling-materialize
 import React from "react";
 import ReactDOM from "react-dom";
 //BrowserRouter looks at url and changes what components are visible.
@@ -25,11 +22,7 @@ const store = createStore(
   reducers,
   //when application starts up, check to see if we have a stored token, if we do, start redux state with JWT stored to auth.authenticated property
   {
-<<<<<<< HEAD
     auth: { authenticated: localStorage.getItem("token") }
-=======
-    authenticated: localStorage.getItem("token")
->>>>>>> styling-materialize
   },
   applyMiddleware(reduxThunk)
 );
