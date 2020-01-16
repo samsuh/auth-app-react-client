@@ -9,6 +9,7 @@ const INITIAL_STATE = {
     errorMessage: ''
 }
 
+//REDUCERS defined here in the switch statement. this function gets imported into reducers/index.js file, wired up to combineReducers, then hook up to reduxStore in the project-root's index.js
 export default function(state= INITIAL_STATE, action){
     //temporary return since we dont have any action creators or types.
     // return state

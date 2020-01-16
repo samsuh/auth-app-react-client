@@ -28,7 +28,7 @@ class Header extends Component {
         return(
             <div> 
                 <Link to="/">Archon</Link>
-                {/* Now being conditionally rendered
+                {/* Now being conditionally rendered and passed in as {this.renderLinks()}
                 <Link to="/signup">Sign Up</Link>
                 <Link to="/signin">Sign In</Link>
                 <Link to="/signout">Sign Out</Link>

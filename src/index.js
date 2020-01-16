@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+//BrowserRouter looks at url and changes what components are visible. 
+//the Route components sets up rule between certain route-paths a user can visit and related component to be visible. 
 import {BrowserRouter, Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
@@ -14,9 +16,9 @@ import Signout from './components/auth/Signout'
 import Signin from './components/auth/Signin'
 
 //import redux-thunk and tie it to the createStore call. expanded from just "createStore(reducers, {})"
+//initial state {}, but changed to set 'authenticated' to the JWT in localStorage if user already signed in
 const store = createStore(
     reducers, 
-    //initial state {}, but changed to set 'authenticated' to the JWT in localStorage if user already signed in
     //when application starts up, check to see if we have a stored token, if we do, start redux state with JWT stored to auth.authenticated property 
     {
         authenticated: localStorage.getItem('token')
