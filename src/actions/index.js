@@ -61,3 +61,15 @@ export const signup = (formProps, callback) => async dispatch => {
     //once user successfully signs up, we have to redirect them to the Dashboard page of our application. 
 
 }
+
+//signout action creator 
+export const signout = () => {
+    //remove the JWT from browser's localStorage
+    localStorage.removeItem('token')
+
+    //return action with same 'type' as signup, just passing {payload: ''} to clear the 'authenticated' piece of state in auth reducer. 
+    return {
+        type: AUTH_USER,
+        payload: ''
+    }
+}
