@@ -57,9 +57,7 @@ export const signup = (formProps, callback) => async dispatch => {
     //dispatch an action of AUTH_ERROR with error payload. 
     dispatch({type: AUTH_ERROR, payload: 'Email in use'})
 }
-
-    //once user successfully signs up, we have to redirect them to the Dashboard page of our application. 
-
+    //once user successfully signs up, we have to redirect them to the Dashboard page of our application. done in Signup.js component's button onSubmit.
 }
 
 //signout action creator 
@@ -72,4 +70,15 @@ export const signout = () => {
         type: AUTH_USER,
         payload: ''
     }
+}
+
+//copied from Signup action creator from above.
+export const signin = (formProps, callback) => async dispatch => {
+    try {const response = await axios.post('http://localhost:3090/signin', formProps)
+    dispatch({type: AUTH_USER, payload: response.data.token})
+    localStorage.setItem('token', response.data.token)
+    callback()
+} catch (e){
+    dispatch({type: AUTH_ERROR, payload: 'Invalid login credentials. Try again.'})
+}
 }
