@@ -1,7 +1,22 @@
-import React from 'react'
+import React from "react";
+import Hero from "./landing/Hero.js";
+import Tiers from "./landing/Tiers.js";
+import About from "./landing/About.js";
+import Devs from "./landing/Devs.js";
+import Contact from "./landing/Contact.js";
 
-export default () => {
-    return (
-        <h3>Welcome to Archon! </h3>
-    )
-}
+const Landing = () => {
+  return (
+    <div>
+      <div className='background'>
+        <Hero />
+      </div>
+      <Tiers />
+      <About />
+      <Devs />
+      <Contact />
+    </div>
+  );
+};
+
+export default Landing;

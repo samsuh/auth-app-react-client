@@ -53,6 +53,7 @@ class Header extends Component {
 
 //Header component checks if user is authenticated. define mapStateToProps which takes state object and returns the 'authenticated' piece of state
 function mapStateToProps(state) {
+  console.log(state);
   return { authenticated: state.auth.authenticated };
 }
 
