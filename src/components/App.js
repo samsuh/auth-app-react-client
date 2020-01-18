@@ -1,16 +1,15 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-// import M from "materialize-css";
 
 export default ({ children }) => {
   return (
-    <div className='container' id='app-body'>
-      <header>
+    <div id='app-body'>
+      <header className='transparent'>
         <Header />
       </header>
       <main>{children}</main>
-      <footer>
+      <footer className='blue darken-4'>
         <Footer />
       </footer>
     </div>

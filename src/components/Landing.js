@@ -11,8 +11,8 @@ const Landing = () => {
       <div className='background'>
         <Hero />
       </div>
-      <Tiers />
       <About />
+      <Tiers />
       <Devs />
       <Contact />
     </div>

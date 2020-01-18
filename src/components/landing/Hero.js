@@ -3,26 +3,28 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className='hero container'>
+    <div className='hero container transparent'>
       <div className='row'>
-        <div class='col s12 m10 offset-m1 center'>
-          <h5>Welcome to Archon (Hero)</h5>
-          <h1>Stop Overpaying for Cloud Storage!</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id,
-            officia cupiditate sit voluptatem provident doloribus quasi veniam
-            illo neque iste!
-          </p>
+        <div className='col s12 m10'>
+          <h4>Save 80% of your cloud storage costs</h4>
+          <ul className='left-align browser-default'>
+            <li>
+              <p>A fifth the cost of Amazon S3</p>
+            </li>
+            <li>
+              <p>Geo-redundant storage </p>
+            </li>
+            <li>
+              <p>Intelligently automated multicloud selection</p>
+            </li>
+            <li>
+              <p>99.99% uptime and 11 9's durability</p>
+            </li>
+          </ul>
           <Link
-            to='/'
-            className='btn btn-large white blue-text darken-3 waves-effect waves-teal'>
-            Learn More
-          </Link>
-
-          <Link
-            to='/'
-            className='btn btn-large blue darken-3 white-text waves-effect waves-light'>
-            Sign Up
+            to='/contact'
+            className='btn btn-large blue lighten-1 white-text waves-effect waves-light'>
+            Contact Sales
           </Link>
         </div>
       </div>

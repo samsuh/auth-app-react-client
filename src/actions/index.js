@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AUTH_USER, AUTH_ERROR } from "./types";
+import { AUTH_USER, AUTH_ERROR, CONTACT_US, CONTACT_ERROR } from "./types";
 
 //ACTION CREATORS are in this file: signup, signout, signin
 //More action creators to add later: contact-us-form-submission, get-buckets, get-files
@@ -93,6 +93,25 @@ export const signin = (formProps, callback) => async dispatch => {
     dispatch({
       type: AUTH_ERROR,
       payload: "Invalid login credentials. Try again."
+    });
+  }
+};
+
+//contact-us form. not yet set up on server-side.
+export const contactForm = (formProps, callback) => async dispatch => {
+  try {
+    const response = await axios.post(
+      "http://localhost:3090/contact",
+      formProps
+    );
+    dispatch({ type: CONTACT_US, payload: response.data });
+    // localStorage.setItem("token", response.data.token);
+    // callback(); // prob redirect them to a thank you page?
+  } catch (e) {
+    dispatch({
+      type: CONTACT_ERROR,
+      payload:
+        "Could not reach Contact. Please email us at support@archon.cloud"
     });
   }
 };

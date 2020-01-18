@@ -1,10 +1,16 @@
 /* Not yet importing anywhere. called from Footer, but not hooked up. */
-
+html {
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+.bold {
+  font-weight: 700;
+}
 .background {
-  background: url(../img/background.jpg);
+  color: #fff;
+  background: url(../img/background-man.png);
   background-size: cover;
   background-position: center;
-  color: #fff;
+  min-height: 850px;
 }
 #app-body {
   display: flex;
@@ -24,24 +30,29 @@ main {
   height: 100%;
   overflow: hidden;
 }
-.main-header {
+.nav-wrapper {
+  height: 20px !important;
+  font-size: 12px !important;
 }
 
 .hero {
-  padding: 100px 0;
+  padding: 22vh 0;
 }
-.hero .btn {
-  margin: 0 5px;
+.hero h4 {
+  font-weight: 700;
+}
+.hero ul {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+.hero li {
+  list-style-position: outside;
+  margin-left: 1em;
 }
 
-.section-devs {
-  position: relative;
-  background: url(../img/code.jpg);
-  background-size: cover;
-  background-position: center;
-  border-top: #333 solid 5px;
-  border-bottom: #333 solid 5px;
-  min-height: 180px;
+.section-about h4 {
+  font-weight: 700;
 }
 
 .section-contact {
@@ -55,4 +66,36 @@ main {
 
 .brand-logo {
   margin-left: 15px;
+}
+
+#mobile-demo a {
+  color: #fff;
+}
+
+.section {
+  padding: 10vh 0 15vh 0;
+}
+
+.section-tiers {
+  position: relative;
+  margin-top: -300px;
+  height: 0px;
+  z-index: +1;
+}
+
+.section-tiers .card-panel {
+  min-height: 320px;
+}
+
+.section-devs {
+  padding-top: 200px;
+  position: relative;
+  min-height: 180px;
+}
+#dev-content {
+  padding-top: 50px;
+}
+
+.section-contact span {
+  font-weight: 700;
 }

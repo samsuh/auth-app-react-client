@@ -15,6 +15,12 @@ import Signup from "./components/auth/Signup";
 import Dashboard from "./components/Dashboard";
 import Signout from "./components/auth/Signout";
 import Signin from "./components/auth/Signin";
+import M from "materialize-css";
+
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems, {});
+});
 
 //import redux-thunk and tie it to the createStore call. expanded from just "createStore(reducers, {})"
 //initial state {}, but changed to set 'authenticated' to the JWT in localStorage if user already signed in
