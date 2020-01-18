@@ -20,14 +20,14 @@ class ContactForm extends Component {
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <fieldset>
           <label>Email</label>
-          <Field name='email' type='text' component='input' />
+          <Field name="email" type="text" component="input" />
         </fieldset>
         <fieldset>
           <label>Message</label>
-          <Field name='message' type='text' component='input' />
+          <Field name="message" type="text" component="input" />
         </fieldset>
         <div>{this.props.errorMessage}</div>
-        <button className='btn'>Sign In!</button>
+        <button className="btn">Sign In!</button>
       </form>
     );
   }
