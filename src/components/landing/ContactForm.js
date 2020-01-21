@@ -18,16 +18,27 @@ class ContactForm extends Component {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
-        <fieldset>
-          <label>Email</label>
-          <Field name="email" type="text" component="input" />
-        </fieldset>
-        <fieldset>
-          <label>Message</label>
-          <Field name="message" type="text" component="input" />
-        </fieldset>
+        <div className='input-field'>
+          <label for='contact-email'>Email</label>
+          <Field
+            name='email'
+            type='text'
+            component='input'
+            id='contact-email'
+          />
+        </div>
+        <div className='input-field'>
+          <label for='textarea1'>Message</label>
+          <Field
+            id='textarea1'
+            name='message'
+            component='textarea'
+            className='materialize-textarea'
+          />
+        </div>
+
         <div>{this.props.errorMessage}</div>
-        <button className="btn">Sign In!</button>
+        <button className='btn'>Sign In!</button>
       </form>
     );
   }
