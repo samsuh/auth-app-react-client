@@ -1,6 +1,6 @@
 /* Not yet importing anywhere. called from Footer, but not hooked up. */
 html {
-  font-family: "Montserrat", Arial, sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 .bold {
   font-weight: 700;
@@ -75,11 +75,13 @@ main {
 .section {
   padding: 10vh 0 15vh 0;
 }
-
+.section-about {
+}
 .section-tiers {
   position: relative;
   margin-top: -300px;
-  height: 0px;
+  margin-bottom: -100px;
+  height: 400px;
   z-index: +1;
 }
 
@@ -88,12 +90,9 @@ main {
 }
 
 .section-devs {
-  padding-top: 200px;
-  position: relative;
-  min-height: 180px;
 }
 #dev-content {
-  padding-top: 50px;
+  padding-top: 150px;
 }
 
 .section-contact span {
@@ -103,4 +102,7 @@ main {
 .page-padding {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.page-signup {
 }

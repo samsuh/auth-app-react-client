@@ -3,15 +3,15 @@ import React from "react";
 const Devs = () => {
   return (
     <section className='section section-devs grey white-text'>
-      <div className='row valign-wrapper container' id='dev-content'>
-        <div className='col s12 m6 center-align'>
+      <div className='row container' id='dev-content'>
+        <div className='col s12 m7 center-align'>
           <img
             src={require("../../img/multicloud-graphic.png")}
             className='responsive-img'
             alt='Multicloud Graphic'
           />
         </div>
-        <div className='col s12 m6'>
+        <div className='col s12 m5'>
           <h5 className='blue-text text-darken-4 bold'>
             Archon Powered Businesses
           </h5>
