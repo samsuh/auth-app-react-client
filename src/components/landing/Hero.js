@@ -21,11 +21,11 @@ const Hero = () => {
               <p>99.99% uptime and 11 9's durability</p>
             </li>
           </ul>
-          <Link
-            to='/contact'
+          <a
+            href='#contact'
             className='btn btn-large blue lighten-1 white-text waves-effect waves-light'>
             Contact Sales
-          </Link>
+          </a>
         </div>
       </div>
     </div>

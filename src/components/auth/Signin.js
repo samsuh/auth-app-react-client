@@ -17,18 +17,27 @@ class Signin extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)} className='container'>
-        <fieldset>
-          <label>Email</label>
-          <Field name='email' type='text' component='input' />
-        </fieldset>
-        <fieldset>
-          <label>Password</label>
-          <Field name='password' type='password' component='input' />
-        </fieldset>
-        <div>{this.props.errorMessage}</div>
-        <button>Sign In!</button>
-      </form>
+      <div className='container page-padding'>
+        <div className='row'>
+          <div className='col s12 m6'>
+            <h4 className='blue-text'>Welcome Back</h4>
+          </div>
+          <div className='col s12 m6'>
+            <form onSubmit={handleSubmit(this.onSubmit)}>
+              <div className='input-field'>
+                <label>Email</label>
+                <Field name='email' type='text' component='input' />
+              </div>
+              <div className='input-field'>
+                <label>Password</label>
+                <Field name='password' type='password' component='input' />
+              </div>
+              <div>{this.props.errorMessage}</div>
+              <button className='btn right'>Sign In!</button>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -8,6 +8,7 @@ const Devs = () => {
           <img
             src={require("../../img/multicloud-graphic.png")}
             className='responsive-img'
+            alt='Multicloud Graphic'
           />
         </div>
         <div className='col s12 m6'>

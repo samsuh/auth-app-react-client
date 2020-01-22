@@ -8,32 +8,32 @@ class Footer extends Component {
         <div className='container'>
           <div className='row'>
             <div className='col l6 s12'>
-              <h5 className='white-text'>Footer Content</h5>
+              <h5 className='white-text'>Archon Cloud Storage</h5>
               <p className='grey-text text-lighten-4'>
-                Use rows and columns here to organize footer content.
+                Harness the potential of cloud storage.
               </p>
             </div>
             <div className='col l4 offset-l2 s12'>
-              <h5 className='white-text'>Links</h5>
+              <h5 className='white-text'>About</h5>
               <ul>
                 <li>
                   <a className='grey-text text-lighten-3' href='#!'>
-                    Link 1
+                    What is Archon?
                   </a>
                 </li>
                 <li>
                   <a className='grey-text text-lighten-3' href='#!'>
-                    Link 2
+                    Cloud Latency vs Cost
                   </a>
                 </li>
                 <li>
                   <a className='grey-text text-lighten-3' href='#!'>
-                    Link 3
+                    Pricing
                   </a>
                 </li>
                 <li>
                   <a className='grey-text text-lighten-3' href='#!'>
-                    Link 4
+                    Frictionless migration
                   </a>
                 </li>
               </ul>
@@ -43,8 +43,10 @@ class Footer extends Component {
         <div className='footer-copyright'>
           <div className='container'>
             © 2020 Copyright Archon
-            <a className='grey-text text-lighten-4 right' href='#!'>
-              More Links
+            <a
+              className='grey-text text-lighten-4 right'
+              href='https://t.me/ArchonCloud'>
+              Join Archon Telegram
             </a>
           </div>
         </div>

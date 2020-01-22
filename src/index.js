@@ -19,7 +19,12 @@ import M from "materialize-css";
 
 document.addEventListener("DOMContentLoaded", function() {
   var elems = document.querySelectorAll(".sidenav");
-  var instances = M.Sidenav.init(elems, {});
+  M.Sidenav.init(elems, {});
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  var elems = document.querySelectorAll(".scrollspy");
+  M.ScrollSpy.init(elems, {});
 });
 
 //import redux-thunk and tie it to the createStore call. expanded from just "createStore(reducers, {})"

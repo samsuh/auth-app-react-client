@@ -25,28 +25,57 @@ class Signup extends Component {
     //destructure handleSubmit from redux-form from props object.
     const { handleSubmit } = this.props;
     return (
-      //on form submission, we call handleSubmit
-      //to handleSubmit, we pass the callback function we defined above, which we named onSubmit. We want to render this sometime in the future, but pass reference to onSubmit function.
-      <form onSubmit={handleSubmit(this.onSubmit)} className='container'>
-        <fieldset>
-          <label>Email</label>
-          <Field name='email' type='text' component='input' />
-        </fieldset>
-        <fieldset>
-          <label>Password</label>
-          <Field name='password' type='password' component='input' />
-        </fieldset>
-        <fieldset>
-          <label>Company</label>
-          <Field name='company' type='text' component='input' />
-        </fieldset>
-        <fieldset>
-          <label>Job Title</label>
-          <Field name='jobTitle' type='text' component='input' />
-        </fieldset>
-        <div>{this.props.errorMessage}</div>
-        <button>Sign Up!</button>
-      </form>
+      <div className='row container page-padding'>
+        <div className='col s12 m6'>
+          <h4 className='blue-text'>Start 30 day FREE TRIAL</h4>
+          <h5 className='flow-text'>
+            Are you ready to store ALL of your data in the cloud affordably?
+          </h5>
+          <p className='flow-text text-darken-3'>Now you can!</p>
+          <ul>
+            <li>
+              <i className='material-icons blue-text text-darken-3'>check</i>
+              Get full access to Wasabi free for 30 days.
+            </li>
+            <li>
+              <i className='material-icons blue-text text-darken-3'>check</i>
+              Store up to 1 terabyte.
+            </li>
+            <li>
+              <i className='material-icons blue-text text-darken-3'>check</i>No
+              credit card required.
+            </li>
+            <li>
+              <i className='material-icons blue-text text-darken-3'>check</i>No
+              auto-charge after the trial ends.
+            </li>
+          </ul>
+        </div>
+        <div className='col s12 m6 center-align'>
+          <div className='card-panel grey lighten-4'>
+            <form onSubmit={handleSubmit(this.onSubmit)} className='container'>
+              <div className='input-field'>
+                <label>Email*</label>
+                <Field name='email' type='text' component='input' />
+              </div>
+              <div className='input-field'>
+                <label>Password*</label>
+                <Field name='password' type='password' component='input' />
+              </div>
+              <div className='input-field'>
+                <label>Company</label>
+                <Field name='company' type='text' component='input' />
+              </div>
+              <div className='input-field'>
+                <label>Job Title</label>
+                <Field name='jobTitle' type='text' component='input' />
+              </div>
+              <div>{this.props.errorMessage}</div>
+              <button className='btn'>Sign Up!</button>
+            </form>
+          </div>
+        </div>
+      </div>
     );
   }
 }

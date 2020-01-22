@@ -19,7 +19,7 @@ class ContactForm extends Component {
     return (
       <form onSubmit={handleSubmit(this.onSubmit)}>
         <div className='input-field'>
-          <label for='contact-email'>Email</label>
+          <label htmlFor='contact-email'>Email</label>
           <Field
             name='email'
             type='text'
@@ -28,7 +28,7 @@ class ContactForm extends Component {
           />
         </div>
         <div className='input-field'>
-          <label for='textarea1'>Message</label>
+          <label htmlFor='textarea1'>Describe your data storage needs</label>
           <Field
             id='textarea1'
             name='message'
@@ -38,7 +38,7 @@ class ContactForm extends Component {
         </div>
 
         <div>{this.props.errorMessage}</div>
-        <button className='btn'>Sign In!</button>
+        <button className='btn'>Send</button>
       </form>
     );
   }

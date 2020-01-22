@@ -99,3 +99,8 @@ main {
 .section-contact span {
   font-weight: 700;
 }
+
+.page-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
