@@ -1,8 +1,8 @@
 import axios from "axios";
-import { AUTH_USER, AUTH_ERROR, CONTACT_US, CONTACT_ERROR } from "./types";
+import { AUTH_USER, AUTH_ERROR, SUBMIT_CONTACT, CONTACT_ERROR } from "./types";
 
 //ACTION CREATORS are in this file: signup, signout, signin
-//More action creators to add later: contact-us-form-submission, get-buckets, get-files
+//More action creators to add later: contact-us-form-submission (SUBMIT_CONTACT), get-buckets, get-files
 
 //signup called with received email/password from our form.
 //signup is a typical action creator. we call it, and inside it, it's our duty to return an action with type/optional-payload {type:auth_user, payload: 'something'}
@@ -98,15 +98,14 @@ export const signin = (formProps, callback) => async dispatch => {
 };
 
 //contact-us form. not yet set up on server-side.
-export const contactForm = (formProps, callback) => async dispatch => {
+export const submitContact = (formProps, callback) => async dispatch => {
   try {
-    const response = await axios.post(
-      "http://localhost:3090/contact",
+    const response = axios.post(
+      "http://localhost:3090/submitContact",
       formProps
     );
-    dispatch({ type: CONTACT_US, payload: response.data });
-    // localStorage.setItem("token", response.data.token);
-    // callback(); // prob redirect them to a thank you page?
+    dispatch({ type: SUBMIT_CONTACT, payload: response });
+    callback();
   } catch (e) {
     dispatch({
       type: CONTACT_ERROR,

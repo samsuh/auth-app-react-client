@@ -3,6 +3,6 @@ export const AUTH_USER = "auth_user";
 
 export const AUTH_ERROR = "auth_error";
 
-export const CONTACT_US = "contact_us";
+export const SUBMIT_CONTACT = "submit_contact";
 
 export const CONTACT_ERROR = "contact_error";
