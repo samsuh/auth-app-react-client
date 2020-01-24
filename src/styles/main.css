@@ -79,8 +79,8 @@ main {
 }
 .section-tiers {
   position: relative;
-  margin-top: -300px;
-  margin-bottom: -100px;
+  margin-top: -200px;
+  margin-bottom: -200px;
   height: 400px;
   z-index: +1;
 }
@@ -92,7 +92,7 @@ main {
 .section-devs {
 }
 #dev-content {
-  padding-top: 150px;
+  padding-top: 250px;
 }
 
 .section-contact span {
