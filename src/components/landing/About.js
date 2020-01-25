@@ -8,7 +8,7 @@ const About = () => {
           <div className='col s12 m6'>
             <h4>
               <span className='blue-text text-darken-3'>
-                Archon Cloud is the
+                Archon Cloud is the BEST
               </span>{" "}
               Intelligent Cloud
             </h4>

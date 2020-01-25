@@ -47,7 +47,8 @@ export const signup = (formProps, callback) => async dispatch => {
   //try block catches errors from signup process so we can use it to display to users on the front-end form
   try {
     const response = await axios.post(
-      "http://localhost:3090/signup",
+      // "http://localhost:3090/signup",
+      "https://staging.archon.cloud:8080/signup",
       formProps
     );
 
